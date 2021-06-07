@@ -41,7 +41,7 @@ app.layout = dbc.Container(
 )
 def make_graph(age, job, marital,churn):
     temp = df[(df['age_group']=='{}'.format(age)) & (df['job_type']=='{}'.format(job)) & (df['marital']=='{}'.format(marital)) & (df['churn_cat']=='{}'.format(churn))]
-    temp = pd.DataFrame(df[['month']].groupby('month').size().reindex(months_in_order).reset_index())
+    temp = pd.DataFrame(temp[['month']].groupby('month').size().reindex(months_in_order).reset_index())
     temp.columns = ['Month','Count']
     fig1 = px.bar(temp,x='Month',y="Count",barmode='group',color_discrete_sequence=['#7201a8'])
     return fig1
@@ -90,4 +90,4 @@ def make_graph4(churn):
     return fig4
 
 if __name__ == "__main__":
-    app.run_server()
+    app.run_server(debug=True)
