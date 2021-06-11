@@ -8,7 +8,6 @@ import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
 
 df = pd.read_csv(r'df.csv')
-
 unique_age_groups = df['age_group'].unique()
 unique_job_type = df['job_type'].unique()
 unique_marital_type = df['marital'].unique()
@@ -29,7 +28,7 @@ controls = dbc.Card(
                     options=[
                         {"label": col, "value": col} for col in unique_age_groups
                     ],
-                    value="Adult",
+                    value="Young Adult",
                 ),
             ],
             className='mt-5'
@@ -132,14 +131,15 @@ cards = [
             dbc.Card(
             dbc.CardBody(
                 [
-                    html.H4("1826.74", className="card-title"),
-                    html.H6(
+                    html.H4(className="card-title",id='card-1'),
+                    html.H5(
                         [
-                            "Average bank balance of Customers (Subscribers/Unsubscribers)"            
+                            "Average Balance."            
                         ],
                         className="card-text",
                     ),
-                ]
+                ],
+                style={'height':'120px'}
             ),
             className="w-100",
             style={'box-shadow':'2px 2px 10px grey'}
@@ -149,14 +149,12 @@ cards = [
             dbc.Card(
             dbc.CardBody(
                 [
-                    html.H4("48.7%", className="card-title"),
-                    html.H6(
-                        [
-                            "of the ",html.I("Subscribers"), " are ",html.Code("Students")," or",html.Br(),html.Code(" Retired.")
-                        ],
-                        className="card-text",
+                    html.H4(className="card-title",id='card-2'),
+                    html.H5(
+                        className="card-text",id='card-22'
                     ),
-                ]
+                ],
+                style={'height':'120px'}
             ),
             className="w-100",
             style={'box-shadow':'2px 2px 10px grey'}
@@ -166,14 +164,15 @@ cards = [
             dbc.Card(
             dbc.CardBody(
                 [
-                    html.H4("83%", className="card-title"),
-                    html.H6(
+                    html.H4(className="card-title",id='card-3'),
+                    html.H5(
                         [
-                            "new",html.I("Subscribers")," gained since last camapaign.",html.Br()
+                            "(Subs/Unsubs) change"
                         ],
                         className="card-text",
                     ),
-                ]
+                ],
+                style={'height':'120px'}
             ),
             className="w-100",
             style={'box-shadow':'2px 2px 10px grey'}
@@ -183,14 +182,13 @@ cards = [
             dbc.Card(
             dbc.CardBody(
                 [
-                    html.H4("3346", className="card-title"),
-                    html.H6(
-                        [
-                            "new ",html.I("Subscribers")," gained since last",html.Br()," campaign." 
-                        ],
-                        className="card-text",
+                    html.H4(className="card-title",id='card-4'),
+                    html.H5(
+                        
+                        className="card-text",id='card-44'
                     ),
-                ]
+                ],
+                style={'height':'120px'}
             ),
             className="w-100",
             style={'box-shadow':'2px 2px 10px grey'}
@@ -200,31 +198,15 @@ cards = [
             dbc.Card(
             dbc.CardBody(
                 [
-                    html.H4("61%", className="card-title"),
-                    html.H6(
+                    html.H4(className="card-title",id='card-5'),
+                    html.H5(
                         [
-                            "of the ",html.I("Subscribers")," has no loan.(Personal or House) "
+                            "Average calll duration."
                         ],
                         className="card-text",
                     ),
-                ]
-            ),
-            className="w-100",
-            style={'box-shadow':'2px 2px 10px grey'}
-        )
-        ),
-        dbc.Col(
-            dbc.Card(
-            dbc.CardBody(
-                [
-                    html.H4("557.25", className="card-title"),
-                    html.H6(
-                        [
-                            "Average call duration for successfully gained ",html.I("Subscriber.")
-                        ],
-                        className="card-text",
-                    ),
-                ]
+                ],
+                style={'height':'120px'}
             ),
             className="w-100",
             style={'box-shadow':'2px 2px 10px grey'}
