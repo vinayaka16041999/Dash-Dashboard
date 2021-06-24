@@ -220,4 +220,4 @@ def update_cards5(churn):
     return val
 
 if __name__ == "__main__":
-    app.run_server(debug=True,port='8080')
+    app.run_server(port='8080')
